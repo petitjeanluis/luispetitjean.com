@@ -2,12 +2,13 @@ version: 0.2
 
 env:
     variables:
-        BUILD_FOLDER: "dist/personal-website"
+        BUILD_FOLDER: "personal-website/dist/personal-website"
 phases:
     install:
         runtime-versions:
             nodejs: 10
         commands:
+            - cd personal-website
             - echo Installing source NPM dependencies...
             - npm install
             - npm install -g @angular/cli
