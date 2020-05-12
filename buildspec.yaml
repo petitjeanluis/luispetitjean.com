@@ -2,7 +2,7 @@ version: 0.2
 
 env:
     variables:
-        BUILD_FOLDER: "personal-website/dist/personal-website"
+        BUILD_FOLDER: "personal-website/dist"
 phases:
     install:
         runtime-versions:
@@ -20,4 +20,3 @@ artifacts:
     files:
         - '**/*'
     base-directory: ${BUILD_FOLDER}
-    discard-paths: yes
