@@ -1,0 +1,44 @@
+
+.container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+.navbar-nav {
+    list-style: none;
+}
+
+.nav-link, .navbar-brand{
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 120%;
+}
+
+.nav-link:hover {
+    color: #CCCCCC;
+}
+
+.nav-item {
+    margin: auto 10px
+}
+
+.fa-navicon {
+    color: white;
+}
+
+.dark {
+    color: #222222;
+}
+
+@media screen and (max-width: 992px) {
+    #navbarNav {
+        background-color: rgba(0, 0, 0, .6);
+    }
+}
+@media screen and (min-width: 993px) {
+    .dark-collapse {
+        color: #222222;
+    }
+}

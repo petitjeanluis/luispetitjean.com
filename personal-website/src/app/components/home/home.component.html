@@ -1,4 +1,23 @@
-<p>
-  Hello this is the home page of Luis Petitjean's personal website.
-</p>
-<img src="../../../assets/nut.jpg" alt="Nut button">
+<app-navigator></app-navigator>
+<section class="home" id="home">
+  <div class="container">
+    <div class="home-content">
+        <h1 class="name">
+          Luis Petitjean
+        </h1>
+        <br>
+        <h2 class="description">
+          Associate Cloud Solutions Architect<br>
+        </h2>
+    </div>
+  </div>
+</section>
+<section class="about" id="about" (scroll)="onScroll($event)">
+  <div class="container">
+    <div class="about-content">
+      <h1>
+        About Content
+      </h1>
+    </div>
+  </div>
+</section>
