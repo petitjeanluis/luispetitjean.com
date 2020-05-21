@@ -17,19 +17,19 @@ export class HomeComponent implements OnInit {
   onScroll(e) {
     let aboutSection = document.querySelector('.about');
     let navLinks = document.querySelectorAll('.nav-link');
-    let navbarBrand = document.querySelector('.navbar-brand');
+    let logo = document.querySelector('.logo');
     let navbarIcon = document.querySelector('.fa-navicon');
     if (window.pageYOffset > aboutSection.clientHeight - 20) {
       navLinks.forEach(element => {
         element.classList.add('dark-collapse');
       });
-      navbarBrand.classList.add('dark')
+      logo.setAttribute('src','/assets/blue-logo.png');
       navbarIcon.classList.add('dark')
     } else {
       navLinks.forEach(element => {
         element.classList.remove('dark-collapse');
       });
-      navbarBrand.classList.remove('dark')
+      logo.setAttribute('src','/assets/white-logo.png');
       navbarIcon.classList.remove('dark')
     }
   }
