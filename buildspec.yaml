@@ -16,9 +16,6 @@ phases:
         commands:
             - echo Build started on `date`
             - ng build --prod=true
-    post_build:
-        commands:
-            - aws s3 rm --recursive "s3://luispetitjean.com" 
 artifacts:
     files:
         - '**/*'
