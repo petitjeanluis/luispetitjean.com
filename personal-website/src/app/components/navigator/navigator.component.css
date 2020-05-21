@@ -20,6 +20,10 @@
     color: #CCCCCC;
 }
 
+.navbar-collapse {
+    z-index: 1;
+}
+
 .nav-item {
     margin: auto 10px
 }

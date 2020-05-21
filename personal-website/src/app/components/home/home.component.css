@@ -38,9 +38,45 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.my-image {
+    display: block;
+    margin: auto 24px auto auto;
+    border-radius: 5px;
+    width: 300px;
 }
 
 .about-content {
-    text-align: center;
-    margin: auto;
+    width: 400px;
+    display: block;
+    margin: auto auto auto 24px;
+}
+
+.about-list {
+    list-style: none;
+    padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+    .my-image {
+        margin: 24px auto 12px auto;
+        width: 250px;
+    }
+    
+    .about-content {
+        margin: 12px auto auto auto
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width:768px) {
+    .my-image {
+        margin: auto 12px auto auto;
+    }
+    
+    .about-content {
+        margin: auto auto auto 12px;
+        width: 360px;
+    }
 }
