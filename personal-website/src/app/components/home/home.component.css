@@ -1,19 +1,11 @@
-.container {
-    padding: 0;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    align-items: center;
-}
-
-/*Home start*/
-
+/*Home*/
 .home {
     background: linear-gradient(rgba(0, 0, 0, .9), rgba(0,0,0,.5)), url(/assets/cloud-network.jpg) no-repeat center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
     height: 100vh;
+    z-index: 0;
 }
 
 .home-content {
@@ -32,13 +24,13 @@
     font-size: 150%;
 }
 
-/*About start*/
-
+/*About*/
 .about {
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 0;
 }
 
 .my-image {

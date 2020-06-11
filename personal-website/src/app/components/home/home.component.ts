@@ -1,3 +1,4 @@
+import { NavbarStateService, NavbarState, BackgroundColor } from 'app/services/navbar-state.service';
 import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 
@@ -8,29 +9,25 @@ import { HostListener } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  private aboutSection: Element;
 
-  ngOnInit() {
+  constructor(private navbarStateService: NavbarStateService) {
+  }
+
+  ngOnInit() { 
+    this.aboutSection = document.querySelector('.about');
   }
 
   @HostListener('window:scroll', ['$event'])
   onScroll(e) {
-    let aboutSection = document.querySelector('.about');
-    let navLinks = document.querySelectorAll('.nav-link');
-    let logo = document.querySelector('.logo');
-    let navbarIcon = document.querySelector('.fa-navicon');
-    if (window.pageYOffset > aboutSection.clientHeight - 20) {
-      navLinks.forEach(element => {
-        element.classList.add('dark-collapse');
-      });
-      logo.setAttribute('src','/assets/blue-logo.png');
-      navbarIcon.classList.add('dark')
+    if (window.pageYOffset > this.aboutSection.clientHeight - 20) {
+      if (this.navbarStateService.getBackgroundColor() != BackgroundColor.LIGHT) {
+        this.navbarStateService.setBackgroundColor(BackgroundColor.LIGHT);
+      }
     } else {
-      navLinks.forEach(element => {
-        element.classList.remove('dark-collapse');
-      });
-      logo.setAttribute('src','/assets/white-logo.png');
-      navbarIcon.classList.remove('dark')
+      if (this.navbarStateService.getBackgroundColor() != BackgroundColor.DARK) {
+        this.navbarStateService.setBackgroundColor(BackgroundColor.DARK);
+      }
     }
   }
 
