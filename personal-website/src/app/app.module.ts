@@ -1,14 +1,21 @@
-import { NavbarStateService } from './services/navbar-state.service';
-import { NavigatorComponent } from './components/navigator/navigator.component';
-import { HomeComponent } from './components/home/home.component';
-
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from "@angular/core";
+import { BrowserModule } from '@angular/platform-browser';
+import { EditorModule } from '@tinymce/tinymce-angular';
+import { FormsModule } from '@angular/forms';
+
+import { HomeComponent } from './components/home/home.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BlogsComponent } from './components/blogs/blogs.component';
+import { AppComponent } from './app.component';
+
+import { NavbarStateService } from './services/navbar-state.service';
+import { AppRoutingModule } from './app-routing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule ({
-    imports: [BrowserModule],
-    declarations: [HomeComponent, NavigatorComponent],
-    bootstrap: [HomeComponent, NavigatorComponent],
-    providers: [NavbarStateService]
+    declarations: [AppComponent, NavbarComponent, HomeComponent, BlogsComponent],
+    imports: [BrowserModule, EditorModule, AppRoutingModule, FormsModule, CommonModule],
+    providers: [NavbarStateService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

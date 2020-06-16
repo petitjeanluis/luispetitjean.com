@@ -1,0 +1,13 @@
+<div class="blogs-wrapper">
+  <div class="editor-wrapper">
+    <editor [(ngModel)]="editorOutput" [init]="{
+      base_url: '/tinymce',
+      suffix: '.min',
+      menubar: 'edit format',
+      resize: false,
+      height: 600,
+      plugins: 'save'
+    }"></editor>
+  </div>
+</div>
+

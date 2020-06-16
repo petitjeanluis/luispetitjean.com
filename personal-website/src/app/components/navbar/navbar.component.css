@@ -1,10 +1,6 @@
 header {
     position: fixed;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    z-index: 1;
 }
 
 nav {
@@ -12,6 +8,7 @@ nav {
     flex-wrap: nowrap;
     justify-content: space-around;
     height: 72px;
+    z-index: 1;
 }
 
 #brand {
@@ -20,6 +17,10 @@ nav {
 
 #hamburger {
     margin: auto 16px;
+}
+
+.hide {
+    display: none;
 }
 
 /*General List Styling*/
@@ -46,28 +47,37 @@ nav {
 
 /* Mobile Menu */
 
-#mobile-menu-container {
-    flex-grow: 1;
-}
-
-#mobile-menu li {
-    text-align: center;
+.mobile-menu-container {
+    height: calc(100vh - 72px);
     width: 100%;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 72px;
+    overflow-x: hidden; 
+    transition: 0.5s;
 }
 
-#mobile-menu li:hover {
-    background-color: rgba(50, 50, 50, .8);
+.mobile-menu {
+    position: relative;
+    width: 100%;
+    text-align: center;
 }
 
-#mobile-menu a {
-    color: white;
+.mobile-menu a {
+    padding: 8px;
     text-decoration: none;
+    font-size: 36px;
+    color: #CCCCCC;
     display: block;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    transition: 0.3s;
 }
 
-.mobile-background-color {
+.mobile-menu-container a:hover, .mobile-menu-container a:focus {
+    color: white;
+}
+
+.mobile-menu-color {
     background-color: rgba(50, 50, 50, .7);
 }
 
@@ -94,5 +104,4 @@ nav {
     #hamburger {
         display: none;
     }
-}
-
+}   
