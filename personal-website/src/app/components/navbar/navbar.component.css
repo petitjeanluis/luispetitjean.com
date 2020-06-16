@@ -43,6 +43,11 @@ nav {
 
 #menu li a {
     text-decoration: none;
+    width: 64px;
+}
+
+#menu a:hover {
+    border-bottom: 1px solid;
 }
 
 /* Mobile Menu */
@@ -55,7 +60,6 @@ nav {
     left: 0;
     top: 72px;
     overflow-x: hidden; 
-    transition: 0.5s;
 }
 
 .mobile-menu {
@@ -67,14 +71,14 @@ nav {
 .mobile-menu a {
     padding: 8px;
     text-decoration: none;
-    font-size: 36px;
-    color: #CCCCCC;
+    font-size: 32px;
+    color: white;
     display: block;
     transition: 0.3s;
 }
 
 .mobile-menu-container a:hover, .mobile-menu-container a:focus {
-    color: white;
+    background-color: rgba(70, 70, 70, .9);
 }
 
 .mobile-menu-color {
