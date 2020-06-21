@@ -1,5 +1,7 @@
-import { NavbarStateService, BackgroundColor, MenuPosition } from 'app/services/navbar-state.service';
+import { BloggingService } from './../../services/blogging.service';
 import { Component, OnInit } from '@angular/core';
+import { NavbarStateService, BackgroundColor, MenuPosition } from './../../services/navbar-state.service';
+import { Blog } from 'app/blog';
 
 @Component({
   selector: 'app-blogs',
@@ -8,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogsComponent implements OnInit {
 
-  editorOutput: string;
-  dataModel: any;
+  public blogs: Blog[];
 
-  constructor(private navbarStateService: NavbarStateService) { 
+  constructor(
+    private navbarStateService: NavbarStateService,
+    private blogginService: BloggingService) { 
     navbarStateService.setBackgroundColor(BackgroundColor.LIGHT);
     navbarStateService.setMenuPosition(MenuPosition.CLOSED);
+    
+    blogginService.getBlogs().subscribe(
+      blogs => {
+        this.blogs = blogs;
+      }
+    );
   }
 
   ngOnInit() {

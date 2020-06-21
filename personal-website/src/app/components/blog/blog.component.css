@@ -1,0 +1,51 @@
+.blog-wrapper {
+    width: 60%;
+    margin-top: 72px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.blog-title {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.blog-stamp {
+    float: right;
+}
+
+.edit-btn {
+    background-color: rgb(23, 50, 72);
+    font-weight: 500;
+    padding: 8px;
+    margin: 12px 24px;
+    border: 1px solid;
+    border-radius: 3px;
+    color: white;
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Small */
+@media screen and (max-width: 767px) {
+    .blog-wrapper {
+        width: 80%;
+    }
+}
+
+/* Meidum */
+@media screen and (max-width: 991px) and (min-width: 768px){
+    .blog-wrapper {
+        width: 70%;
+    }
+}
+
+/* Large */
+@media screen and (min-width: 992px) {
+    .blog-wrapper {
+        width: 60%;
+    }
+}

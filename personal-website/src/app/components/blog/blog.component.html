@@ -1,0 +1,8 @@
+<div *ngIf="blog" class="blog-wrapper">
+  <h2 class="blog-title">{{blog.title}}</h2>
+  <div class="blog-content" [innerHTML]="blog.content"></div>
+  <div class="blog-stamp">
+    <i>{{blog.author}} | {{blog.createdOn}}</i>
+    <a href="/editor/{{blog.id}}"><button class="edit-btn">Edit</button></a>
+  </div>
+</div>

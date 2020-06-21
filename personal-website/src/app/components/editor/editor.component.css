@@ -1,0 +1,77 @@
+.editor-wrapper {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100vh - 80px);
+}
+
+.my-label {
+    margin: 10px 10px 24px 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(23, 50, 72);
+}
+
+.my-input {
+    margin: 10px;
+    padding: 2px;
+    width: 320px;
+}
+
+.submit-btn, .delete-btn {
+    font-weight: 500;
+    padding: 8px;
+    margin: 12px 16px;
+    float: right;
+    border: 1px solid;
+    border-radius: 3px;
+    color: white;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.description-label {
+    font-weight: 500;
+    font-size: 16px;
+    color: rgb(23, 50, 72);
+    margin: 10px;
+}
+
+textarea {
+    width: 420px;
+    padding: 8px 10px;
+    margin: 0px 10px 16px 10px;
+}
+
+.submit-btn {
+    background-color: rgb(23, 50, 72);
+}
+
+.delete-btn {
+    background-color: rgb(235, 64, 52);
+}
+
+/* Small */
+@media screen and (max-width: 767px) {
+    .editor-wrapper {
+        width: 90%;
+    }
+}
+
+/* Meidum */
+@media screen and (max-width: 991px) and (min-width:768px){
+    .editor-wrapper {
+        width: 80%;
+    }
+}
+
+/* Large */
+@media screen and (min-width: 992px) {
+    .editor-wrapper {
+        width: 65%;
+    }
+}

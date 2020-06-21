@@ -1,13 +1,8 @@
-<div class="blogs-wrapper">
-  <div class="editor-wrapper">
-    <editor [(ngModel)]="editorOutput" [init]="{
-      base_url: '/tinymce',
-      suffix: '.min',
-      menubar: 'edit format',
-      resize: false,
-      height: 600,
-      plugins: 'save'
-    }"></editor>
-  </div>
+<div *ngIf="blogs" class="blogs-wrapper">
+    <h2 class="blogs-header">Blogs</h2>
+    <div *ngFor="let blog of blogs"class="blog-item">
+        <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
+        <p>{{blog.description}}</p>
+        <p><i>{{blog.createdOn}}</i></p>
+    </div>
 </div>
-

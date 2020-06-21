@@ -1,0 +1,20 @@
+<div *ngIf="blog" class="editor-wrapper">
+  <label class="my-label">Title</label>
+  <input type="text" class="my-input" [(ngModel)]="blog.title">
+  <label class="my-label">Author</label>
+  <input type="text" class="my-input" [(ngModel)]="blog.author">
+  <div class="description">
+    <label class="description-label" >Description</label>
+    <textarea [(ngModel)]="blog.description"></textarea>
+  </div>
+  <editor id="editor" style="height: 600px;" [init]="{ 
+    base_url: '/tinymce', 
+    suffix: '.min', 
+    menubar: 'edit format', 
+    resize: false,
+    height: 600
+  }" [(ngModel)]="blog.content"></editor>
+  <button *ngIf="isNew" class="submit-btn" (click)="onPublish()">Publish</button>
+  <button *ngIf="!isNew" class="submit-btn" (click)="onUpdate()">Update</button>
+  <button *ngIf="!isNew" class="delete-btn" (click)="onDelete()">Delete</button>
+</div>
