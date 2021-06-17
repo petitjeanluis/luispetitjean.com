@@ -5,6 +5,7 @@ env:
         BUILD_FOLDER: "personal-website/dist"
 phases:
     install:
+        on-failure: ABORT
         runtime-versions:
             nodejs: 10
         commands:
@@ -13,9 +14,13 @@ phases:
             - npm install
             - npm install -g @angular/cli
     build:
+        on-failure: ABORT
         commands:
             - echo Build started on `date`
             - ng build --prod=true
+    post-build:
+        commands:
+            - aws s3 rm s3://luispetitjean.com --recursive
 artifacts:
     files:
         - '**/*'
