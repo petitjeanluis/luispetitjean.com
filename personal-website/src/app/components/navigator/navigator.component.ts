@@ -44,20 +44,32 @@ export class NavigatorComponent implements OnInit {
     });
   }
 
+  onClickItem() {
+    this.onClickHamburger();
+  }
+
   onClickHamburger() {
     if (this.hamburgerOpen) {
-      this.hamburger.classList.remove('fa-times');
-      this.hamburger.classList.add('fa-navicon');
-      this.nav.classList.remove('mobile-background-color');
-      this.navbarState.setMenuPosition(MenuPosition.CLOSED);
+      this.closeMobile();
     } else {
-      this.hamburger.classList.remove('fa-navicon');
-      this.hamburger.classList.add('fa-times');
-      this.nav.classList.add('mobile-background-color');
-      this.navbarState.setMenuPosition(MenuPosition.OPEN)
+      this.openMobile()
     }
-    // toggle
-    this.hamburgerOpen = !this.hamburgerOpen;
+  }
+
+  openMobile() {
+    this.hamburger.classList.remove('fa-navicon');
+    this.hamburger.classList.add('fa-times');
+    this.nav.classList.add('mobile-background-color');
+    this.navbarState.setMenuPosition(MenuPosition.OPEN)
+    this.hamburgerOpen = true;
+  }
+
+  closeMobile() {
+    this.hamburger.classList.remove('fa-times');
+    this.hamburger.classList.add('fa-navicon');
+    this.nav.classList.remove('mobile-background-color');
+    this.navbarState.setMenuPosition(MenuPosition.CLOSED);
+    this.hamburgerOpen = false;
   }
 
   @HostListener('window:resize', ['$event'])

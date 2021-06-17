@@ -1,6 +1,6 @@
 /*Home*/
 .home {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0,0,0,.5)), url(/assets/cloud-network.jpg) no-repeat center fixed;
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0,0,0,.5)), url(/assets/cloud-network-min.jpg) no-repeat center fixed;
     background-size: cover;
     display: flex;
     flex-direction: column;
