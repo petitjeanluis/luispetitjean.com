@@ -7,7 +7,7 @@ phases:
     install:
         on-failure: ABORT
         runtime-versions:
-            nodejs: 14
+            nodejs: 12
         commands:
             - cd personal-website
             - echo Installing source NPM dependencies...
