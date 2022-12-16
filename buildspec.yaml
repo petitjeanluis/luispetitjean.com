@@ -11,7 +11,7 @@ phases:
         commands:
             - cd personal-website
             - echo Installing source NPM dependencies...
-            - npm install
+            - npm ci
     build:
         on-failure: ABORT
         commands:
