@@ -7,17 +7,16 @@ phases:
     install:
         on-failure: ABORT
         runtime-versions:
-            nodejs: 12
+            nodejs: 16
         commands:
             - cd personal-website
             - echo Installing source NPM dependencies...
             - npm install
-            - npm install -g @angular/cli
     build:
         on-failure: ABORT
         commands:
             - echo Build started on `date`
-            - ng build --prod=true
+            - npx ng build --configuration production
 artifacts:
     files:
         - '**/*'
